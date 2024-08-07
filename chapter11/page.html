@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chapter11</title>
+</head>
+<!-- 
+<style>
+    .box {
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    margin: 0 50px;
+    display: inline-block;
+    border: 1px solid black;
+    }
+    #dragme {
+    background-color: red;
+    }
+    </style> -->
+
+<style>
+    div {
+        background-color: purple;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+</style>
+
+
+<body>
+
+    <!-- 
+    <p id="unique" onclick="magic()">Click here for magic!</p>
+    <button type="button" onclick="triggerSomething()">Click</button>
+
+    <!-- <div id="welcome">Hi there!</div>
+    <form>
+    <input type="text" name="firstname" placeholder="First name" />
+    <input type="text" name="lastname" placeholder="Last name" />
+    <input type="button" onclick="sendInfo()" value="Submit" />
+    </form> -->
+
+
+    </style>
+    <div id="message">Bubbling events</div>
+    <div id="output">
+        1
+        <div>
+            2
+            <div>
+                3
+                <div>
+                    4
+                    <div>5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="welcome">Hi there!</div>
+    <form>
+        <input type="text" name="firstname" placeholder="First name" onchange="logEvent()" />
+        <input type="text" name="lastname" placeholder="Last name" onblur="logEvent()" />
+        <input type="button" onclick="sendInfo()" value="Submit" />
+    </form> -->
+
+    <!-- <div id="wrapper">JavaScript is fun!</div>
+    <input type="text" name="myNum1" onkeypress="numCheck()">
+    <input type="text" name="myNum2" onkeypress="numCheck2()"> -->
+    <!-- 
+    <div class="box" ondrop="dDrop()" ondragover="nDrop()">2</div>
+    1
+    <div id="dragme" draggable="true"> <div class="box" ondrop="dDrop()" ondragover="nDrop()">2</div>
+        Drag Me Please!
+       2
+    </div>
+</div>
+    
+    <div class="box" ondrop="dDrop()" ondragover="nDrop()">2</div> -->
+
+    <!-- <div id="wrapper"></div>
+    <form action="anotherpage.html" method="get" onsubmit="return 
+   valForm()">
+    <input type="text" id="firstName" name="firstName"
+   placeholder="First name" />
+    <input type="text" id="lastName" name="lastName"
+   placeholder="Last name" />
+    <input type="text" id="age" name="age" placeholder="Age" />
+    <input type="submit" value="submit" />
+    </form> -->
+
+    <button onclick="toTheRight()">Go right</button>
+    <div id="block"></div>
+
+
+    <script src="chapter11.js"></script>
+
+</body>
+
+</html>

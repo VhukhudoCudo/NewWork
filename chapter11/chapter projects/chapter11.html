@@ -1,0 +1,174 @@
+  <!-- <!doctype html>
+<html>
+
+<head>
+    <title>JS Tester</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box0">Hello #1</div>
+        <div class="box" id="box1">Hey #2</div>
+        <div class="box" id="box2">Hi #3</div>
+        <div class="box" id="box3">Hola #4</div>
+    </div>
+    
+    
+
+        <script src="chapter11.js"></script>
+
+</body>
+
+ </html>   -->
+<!--  
+ <DOCTYPE html>
+<html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+        .holder {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="holder">
+        <div id="output"></div>
+    </div>
+    <script>
+        const ele = document.querySelector(".holder");
+        ele.addEventListener("mouseover",
+            (e) => { e.target.classList.add("active"); });
+            //when mouse is in holder active CSS attribute is applied
+        ele.addEventListener("mouseout",
+            (e) => { e.target.classList.remove("active"); });
+        ele.addEventListener("mousemove", coordin);
+           //when the mouse over the holder the coordinates are displayed
+           //in the id output div 
+           //function coordin is invoked
+        function coordin() {
+            let html = "X:" + event.clientX + " | Y:" + event.clientY;
+            //event.clientX and event.clientY show positions of x and y-axis compred to webpage size
+            document.getElementById("output").innerHTML = html;
+            //output div innerHTML  is updated depending on the mouse position
+        }
+    </script>
+</body>
+
+</html>    --> 
+
+  
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Click Me Game</title>
+    <style>
+        .output {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            top: 50px;
+            left: 20%;
+            background-color: red;
+        }
+
+        .message {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="output"></div>
+    <div class="message"></div>
+    <script>
+        output = document.querySelector('.output');
+        const message = document.querySelector('.message');
+        message.textContent = "Press to Start";
+        //text added to message
+        const box = document.createElement('div');
+        //box div is created and CSS attributes are applied
+        const game = {
+            timer: 0,
+            start: null
+        };
+        //game object with starting-values added 
+        box.classList.add('box');
+        //class box is added to box  
+        output.append(box);
+        //box is added to output 
+        box.addEventListener('click', (e) => {
+            box.textContent = "";
+            box.style.display = 'none';
+            game.timer = setTimeout(addBox, ranNum(3000));
+            //ranNum function added with a max of 3000 miliseconds(3 seconds)
+            if (!game.start) {
+                message.textContent = 'Loading....';
+            } else {
+                const cur = new Date().getTime();
+                //current time 
+                const dur = (cur - game.start) / 1000;
+                //game duration
+                message.textContent = `It took ${dur} seconds to click`;
+            }
+        });
+        function addBox() {
+            message.textContent = 'Click it...';
+            game.start = new Date().getTime();
+            //game starts at the current time
+            box.style.display = 'block';
+            box.style.left = ranNum(450) + 'px';
+            box.style.top = ranNum(450) + 'px';
+            //changes CSS for the block to move randomly in the game container
+        }
+        function ranNum(max) {
+            return Math.floor(Math.random() * max);
+            //ranNum is gets random number until max is passed
+        }
+    </script>
+</body>
+
+</html>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
